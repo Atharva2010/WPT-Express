@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+</head>
+
+<body>
+    <h2>Student Form</h2>
+    <form action="./details.html" onsubmit="return validateForm()" method="get">
+        <table>
+            <tr>
+                <td>First Name : </td>
+                <td><input type="text" name="Name" id="name"></td>
+            </tr>
+            <tr>
+                <td>Last Name : </td>
+                <td><input type="text" name="Lname" id="lname"></td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="Email" id="email"></td>
+            </tr>
+
+            <tr>
+                <td>Course : </td>
+                <td><select name="Course" id="course">
+                        <option value="">---Select Choice---</option>
+                        <option value="DAC">DAC</option>
+                        <option value="DBDA">DBDA</option>
+                        <option value="DITIIS">DITIIS</option>
+                    </select></td>
+            </tr>
+
+            <tr>
+                <td>Address : </td>
+                <td><textarea name="Address" id="address" cols="20" rows="3"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>Phone No : </td>
+                <td><input type="number" name="Phone" id="no"></td>
+            </tr>
+
+
+
+            <tr>
+                <td></td>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+           
+            var lname = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            var address = document.getElementById("address").value;
+            var no = document.getElementById("no").value;
+            var course = document.getElementById("course").value;
+
+            if (name.trim() == "") {
+                alert("Enter valid name");
+                return false;
+            }
+            if (lname.trim() == "") {
+                alert("Enter valid Last name");
+                return false;
+            }
+            if (!email.match(validRegex)) {
+                alert("Email Not Valid");
+                return false;
+            }
+            if (no.length != 10) {
+                alert("Enter Valid Number");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            border: 2px solid black;
+            width: 60%;
+            margin-left: 20%;
+            color: red;
+        }
+
+        #para{
+            font-size: 20px;
+            margin-left: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <br>
+    <h3 id="para"></h3>
+
+    <script>
+        const details = document.querySelector("#para");
+        const params = new URLSearchParams(window.location.search);
+
+        params.forEach((value, key) => {
+            details.append(key +" :  "+ value);
+            details.append(document.createElement("br"));
+            details.append(document.createElement("br"));
+        });
+    </script>
+</body>
+</html>
