@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        tr,
+        td {
+            padding: 10px;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 50%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            border: 1px solid black;
+            background-color: #f2f2f2;
+            padding: 20px;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        Enter Student Details
+    </h2>
+    <div class="container">
+        <form action="/updatestudent" method="post">
+            <table>
+                <tr>
+                    <td> Student Id:</td>
+                    <td>
+                        <input type="text" name="studid" id="studid" value="<%=studdata[0].studid%>" readonly>
+                    </td>
+                    <br>
+                </tr>
+                <tr>
+                    <td>Student Name:</td>
+                    <td>
+                        <input type="text" name="name" id="name" value="<%=studdata[0].name%>">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Student City:</td>
+                    <td>
+                        <input type="text" name="city" id="city" value="<%=studdata[0].city%>"><br />
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <button type="submit" name="btn" id="btn" value="btn">Update Student</button>
+        </form>
+
+    </div>
+</body>
+
+</html>

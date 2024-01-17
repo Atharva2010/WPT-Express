@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            border: 1px solid black;
+        }
+
+        tr,td {
+            padding-left: 10px;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 50%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+
+        input[type=submit] {
+            background-color: #0e9765;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/insertstudent" method="post">
+        <table>
+            <tr>
+                <td>Student Id:</td>
+                <td><input type="text" name="studid" id="studid" placeholder="Enter Student Id"></td>
+            </tr>
+            <tr>
+                <td>Student Name:</td>
+                <td><input type="text" name="name" id="name" placeholder="Enter Student Name"></td>
+            </tr>
+            <tr>
+                <td>Student City:</td>
+                <td><input type="text" name="city" id="city" placeholder="Enter City Name"></td>
+            </tr>
+        </table>
+        <br />
+
+        <button type="submit" name="btn" id="btn" value="btn">Add Student</button>
+    </form>
+</body>
+
+</html>
